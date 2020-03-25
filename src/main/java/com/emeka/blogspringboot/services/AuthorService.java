@@ -28,6 +28,7 @@ public class AuthorService {
            mainAuthor.setSurname(author.getSurname());
            mainAuthor.setFirstName(author.getFirstName());
            mainAuthor.setEmail(author.getEmail());
+           mainAuthor.setPassword(author.getPassword());
 
            authorRepository.save(mainAuthor);
 
