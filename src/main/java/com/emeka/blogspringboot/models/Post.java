@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Post extends AuditModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int postId;
+    private int id;
     private String title;
     private String body;
 
@@ -18,12 +18,12 @@ public class Post extends AuditModel{
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Author author;
 
-    public int getPostId() {
-        return postId;
+    public int getId() {
+        return id;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

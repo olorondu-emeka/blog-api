@@ -9,19 +9,19 @@ import javax.persistence.Id;
 public class Author extends AuditModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int authorId;
+    private int id;
     private String surname;
     private String firstName;
     private String email;
     private String password;
     private String role;
 
-    public int getAuthorId() {
-        return authorId;
+    public int getId() {
+        return id;
     }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getSurname() {

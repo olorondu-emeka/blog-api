@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Comment extends AuditModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int commentId;
+    private int id;
     private String commentBody;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -22,12 +22,12 @@ public class Comment extends AuditModel{
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Post post;
 
-    public int getCommentId() {
-        return commentId;
+    public int getId() {
+        return id;
     }
 
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCommentBody() {
