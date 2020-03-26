@@ -34,8 +34,8 @@ public class PostService {
         return "Post was created successfully";
     }
 
-    public String editPost(Post post) {
-        Post thePost = postRepository.findById(post.getId())
+    public String editPost(Post post, int postId) {
+        Post thePost = postRepository.findById(postId)
                 .orElseThrow(() -> new ResourceNotFoundException("Post not found"));
         thePost.setBody(post.getBody());
         thePost.setTitle(post.getTitle());
