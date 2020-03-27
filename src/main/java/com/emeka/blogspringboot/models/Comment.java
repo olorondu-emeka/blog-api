@@ -12,12 +12,12 @@ public class Comment extends AuditModel{
     private int id;
     private String commentBody;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "authorId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Author author;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "postId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Post post;
