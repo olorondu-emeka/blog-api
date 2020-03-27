@@ -13,7 +13,7 @@ public class Post extends AuditModel{
     private String title;
     private String body;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "authorId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Author author;

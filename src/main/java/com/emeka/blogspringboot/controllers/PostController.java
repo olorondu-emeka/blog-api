@@ -20,11 +20,7 @@ public class PostController {
 
     @GetMapping("/posts/{authorId}")
     public List<Post> getPostsByAuthor(@PathVariable int authorId) {
-        System.out.println("hello");
-        List<Post> posts = postService.getPostsByAuthor(authorId);
-        System.out.println("hey");
-        posts.forEach(post -> System.out.println(post.getAuthor().getFirstName()));
-        return posts;
+        return postService.getPostsByAuthor(authorId);
     }
 
     @PostMapping("/posts")
