@@ -15,7 +15,7 @@ public class Post extends AuditModel{
 
     @ManyToOne
     @JoinColumn(name = "authorId", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Author author;
 
     public int getId() {
