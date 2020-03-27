@@ -19,7 +19,7 @@ public class Comment extends AuditModel{
 
     @ManyToOne
     @JoinColumn(name = "postId", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Post post;
 
     public int getId() {
