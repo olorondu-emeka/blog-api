@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Author extends AuditModel{
+public class Author extends AuditModel implements GeneralUser{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -39,7 +39,8 @@ public class Author extends AuditModel{
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    
+    @Override
     public String getEmail() {
         return email;
     }
@@ -48,6 +49,7 @@ public class Author extends AuditModel{
         this.email = email;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }
