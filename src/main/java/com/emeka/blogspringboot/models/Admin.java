@@ -1,12 +1,14 @@
 package com.emeka.blogspringboot.models;
 
+import com.emeka.blogspringboot.repositories.GeneralUserRepository;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Admin extends AuditModel{
+public class Admin implements GeneralUserRepository {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -40,6 +42,7 @@ public class Admin extends AuditModel{
         this.firstName = firstName;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
@@ -48,6 +51,7 @@ public class Admin extends AuditModel{
         this.email = email;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }

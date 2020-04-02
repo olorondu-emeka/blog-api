@@ -1,8 +1,8 @@
 package com.emeka.blogspringboot.services;
 
-import com.emeka.blogspringboot.models.GeneralUser;
+import com.emeka.blogspringboot.models.Author;
 import com.emeka.blogspringboot.models.MyUserDetails;
-import com.emeka.blogspringboot.repositories.GeneralUserRepository;
+import com.emeka.blogspringboot.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,12 +14,12 @@ import java.util.Optional;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
     @Autowired
-    private GeneralUserRepository generalUserRepository;
+    private AuthorRepository authorRepository;
 
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<GeneralUser> generalUser = generalUserRepository.findByEmail(email);
+        Optional<Author> generalUser = authorRepository.findByEmail(email);
         generalUser.orElseThrow(() -> new UsernameNotFoundException(String.format("Email %s not found", email)));
         return generalUser.map(MyUserDetails::new).get();
     }

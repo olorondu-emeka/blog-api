@@ -18,6 +18,7 @@ public class AuthorService {
     }
 
     public String createAuthor(Author author) {
+        author.setRole("USER");
         authorRepository.save(author);
         return "Author created successfully";
     }

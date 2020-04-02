@@ -1,12 +1,14 @@
 package com.emeka.blogspringboot.models;
 
+import com.emeka.blogspringboot.repositories.GeneralUserRepository;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Author extends AuditModel implements GeneralUser{
+public class Author implements GeneralUserRepository {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,6 +17,9 @@ public class Author extends AuditModel implements GeneralUser{
     private String email;
     private String password;
     private String role;
+
+    public Author() {
+    }
 
     public int getId() {
         return id;
