@@ -63,6 +63,7 @@ public class Author implements GeneralUserRepository {
         this.password = password;
     }
 
+    @Override
     public String getRole() {
         return role;
     }

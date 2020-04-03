@@ -31,6 +31,8 @@ public class BlogSpringBootApplication {
                 .apiInfo(apiDetails());
     }
 
+
+
     private ApiInfo apiDetails() {
         return new ApiInfo(
                 "Blog REST API",

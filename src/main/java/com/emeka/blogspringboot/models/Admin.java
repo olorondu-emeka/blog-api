@@ -60,6 +60,7 @@ public class Admin implements GeneralUserRepository {
         this.password = password;
     }
 
+    @Override
     public String getRole() {
         return role;
     }
