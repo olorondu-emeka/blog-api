@@ -1,25 +1,26 @@
 package com.emeka.blogspringboot.models;
 
-import com.emeka.blogspringboot.repositories.GeneralUserRepository;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Author implements GeneralUserRepository {
+public class Author extends GeneralUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String surname;
     private String firstName;
-    private String email;
-    private String password;
-    private String role;
 
     public Author() {
     }
+
+//    public Author(GeneralUser generalUser) {
+//        this.email = generalUser.getEmail();
+//        this.password = generalUser.getPassword();
+//        this.role = generalUser.getRole();
+//    }
 
     public int getId() {
         return id;
@@ -45,30 +46,5 @@ public class Author implements GeneralUserRepository {
         this.firstName = firstName;
     }
     
-    @Override
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }

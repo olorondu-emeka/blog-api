@@ -1,5 +1,6 @@
 package com.emeka.blogspringboot;
 
+import com.emeka.blogspringboot.services.AdminUserDetailsService;
 import com.emeka.blogspringboot.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,9 +17,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     MyUserDetailsService myUserDetailsService;
 
+    @Autowired
+    AdminUserDetailsService adminUserDetailsService;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(myUserDetailsService);
+        auth.userDetailsService(myUserDetailsService)
+                .and()
+                .userDetailsService(adminUserDetailsService);
+
     }
 
     @Bean
@@ -29,7 +36,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate").permitAll();
+                .authorizeRequests()
+                .antMatchers("/authenticate")
+//                .antMatchers("/api/admin")
+                .permitAll();
     }
 
     @Bean
