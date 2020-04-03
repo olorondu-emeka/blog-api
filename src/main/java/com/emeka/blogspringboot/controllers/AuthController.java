@@ -53,7 +53,7 @@ public class AuthController {
                     : myUserDetailsService.loadUserByUsername(generalUser.getEmail());
             final String jwt = jwtUtil.generateToken(userDetails);
 
-            return ResponseEntity.ok(new ResponseUser(jwt));
+            return ResponseEntity.ok(new ResponseUser(jwt, generalUser.getRole()));
         } catch (BadCredentialsException e) {
             throw new Exception("Incorrect role", e);
         }
