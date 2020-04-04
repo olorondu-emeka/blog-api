@@ -33,13 +33,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         final String authorizationHeader = request.getHeader("Authorization");
         final String role = request.getHeader("Role");
-        System.out.println(role);
+
         String email = null;
          String jwtToken = null;
 
         if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             jwtToken = authorizationHeader.substring(7);
-            email = jwtUtil.extractUsername("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWVrYUBnbWFpbC5jb20iLCJpYXQiOjE1ODU5NTU5MDYsImV4cCI6MTU4NTk5MTkwNn0.j2kcLc0tH0C5QP-fw408SqL0_hXykkOwt56hELb5-QE");
+            email = jwtUtil.extractUsername(jwtToken);
             System.out.println(jwtToken);
         }
 
