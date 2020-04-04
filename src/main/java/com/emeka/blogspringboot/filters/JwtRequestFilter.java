@@ -1,6 +1,6 @@
 package com.emeka.blogspringboot.filters;
 
-import com.emeka.blogspringboot.JwtUtil;
+import com.emeka.blogspringboot.utilities.JwtUtil;
 import com.emeka.blogspringboot.services.AdminUserDetailsService;
 import com.emeka.blogspringboot.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;

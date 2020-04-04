@@ -1,4 +1,4 @@
-package com.emeka.blogspringboot;
+package com.emeka.blogspringboot.utilities;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -32,7 +32,6 @@ public class JwtUtil {
     }
 
     private Claims extractAllClaims(String token) {
-//        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
         return Jwts.parserBuilder().setSigningKey(SIGNING_KEY)
                 .build().parseClaimsJws(token).getBody();
     }

@@ -1,6 +1,6 @@
 package com.emeka.blogspringboot.controllers;
 
-import com.emeka.blogspringboot.JwtUtil;
+import com.emeka.blogspringboot.utilities.JwtUtil;
 import com.emeka.blogspringboot.models.GeneralUser;
 import com.emeka.blogspringboot.models.ResponseUser;
 import com.emeka.blogspringboot.services.AdminUserDetailsService;
