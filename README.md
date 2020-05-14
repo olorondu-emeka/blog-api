@@ -24,7 +24,7 @@ System requirements for this project to work includes:
 To install the dependencies in the ***pom.xml***, click on the "import changes" prompt after the project folder has been opened.
 
 ### Running the project
-To run the project on your local machine,run the ***BlogSpringBootApplication.java*** file in the directory:  
+To run the project on your local machine, run the ***BlogSpringBootApplication.java*** file in the directory:  
 `blog-api/src/main/java/com/emeka/blogspringboot/` 
 
 The project can be tested with Postman with the URL: [http://localhost:8080](), or Swagger UI by visiting [http://localhost:8080/swagger-ui.html]() on the web browser.
