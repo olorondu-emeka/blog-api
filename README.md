@@ -1,6 +1,6 @@
 
-# Project Title
-A Blog API. 
+# Blog API
+A simple blog API. 
 
 ## Brief Description
 A Blog REST API built to practice concepts learnt in building REST APIs with Spring Boot.
