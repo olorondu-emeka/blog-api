@@ -32,8 +32,8 @@ The project can be tested with Postman with the URL: [http://localhost:8080](), 
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - The Java web framework used
 * [MySQL](https://www.mysql.com/) - SQL Database
-* [Spring Data JPA]() - The Object Relational Mapping (ORM) dependency for Spring Boot
-* [Spring Security]() & [JWT](https://jwt.io/) - The Spring Boot dependencies for Authentication & Authorization
+* [Spring Data JPA](https://spring.io/projects/spring-data-jpa) - The Object Relational Mapping (ORM) dependency for Spring Boot
+* [Spring Security](https://spring.io/projects/spring-security) & [JWT](https://jwt.io/) - The Spring Boot dependencies for Authentication & Authorization
 * [Maven](https://www.npmjs.com/) - Dependency Manager for Java
 * [Swagger](https://swagger.io/) - API Documentation
 
